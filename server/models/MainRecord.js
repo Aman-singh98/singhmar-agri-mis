@@ -1,0 +1,113 @@
+// import mongoose from 'mongoose';
+
+// const mainRecordSchema = new mongoose.Schema(
+//    {
+//       financialYear: {
+//          type: String,
+//          required: true,
+//       },
+//       srNo: { type: Number },
+//       brandName: { type: String, trim: true },
+//       scanNo: { type: String, trim: true },
+//       miNumber: { type: String, trim: true, index: true },
+//       name: { type: String, trim: true },
+//       fatherName: { type: String, trim: true },
+//       mobileNo: { type: String, trim: true },
+//       dealerName: { type: String, trim: true },
+//       farmerDealerCode: { type: String, trim: true, index: true },
+//       type: { type: String, trim: true },
+//       areaInAcre: { type: Number },
+//       village: { type: String, trim: true },
+//       block: { type: String, trim: true },
+//       district: { type: String, trim: true, index: true },
+//       remarks: { type: String, trim: true },
+//       billNo: { type: String, trim: true },
+//       billValue: { type: Number },
+//       gst: { type: Number },
+//       verificationStatus: { type: String, trim: true },
+//       estimateStatus: { type: String, trim: true },
+//       onlineFarmerShareStatus: { type: String, trim: true },
+//       challanStatus: { type: String, trim: true },
+//       tallyBillStatus: { type: String, trim: true },
+//       billUploadStatus: { type: String, trim: true },
+//       verificationDone: { type: String, trim: true },
+//       verificationDate: { type: Date },
+//       verification: { type: String, trim: true },
+//       reason: { type: String, trim: true },
+//       estimate: { type: Number },
+//       tallyBill: { type: Number },
+//       farmerShare: { type: Number },
+//       billUploadPending: { type: Number },
+//       miSurvey: { type: Number },
+//       verificationFlag: { type: Number },
+//       newVerified: { type: Number },
+//       status: { type: String, trim: true },
+//       applicationStatus: { type: String, trim: true },
+//       delay: { type: String, trim: true },
+//       result: { type: String, trim: true },
+//       dateOfApplication: { type: Date },
+//    },
+//    { timestamps: true }
+// );
+
+// export default mongoose.model('MainRecord', mainRecordSchema);
+
+
+
+
+
+
+
+
+
+import mongoose from 'mongoose';
+
+const mainRecordSchema = new mongoose.Schema(
+   {
+      uploadDate: { type: String, index: true }, // "2025-06-22" — NEW FIELD
+      financialYear: { type: String, required: true },
+      srNo: { type: Number },
+      brandName: { type: String, trim: true },
+      scanNo: { type: String, trim: true },
+      miNumber: { type: String, trim: true, index: true },
+      name: { type: String, trim: true },
+      fatherName: { type: String, trim: true },
+      mobileNo: { type: String, trim: true },
+      dealerName: { type: String, trim: true },
+      farmerDealerCode: { type: String, trim: true, index: true },
+      type: { type: String, trim: true },
+      areaInAcre: { type: Number },
+      village: { type: String, trim: true },
+      block: { type: String, trim: true },
+      district: { type: String, trim: true, index: true },
+      remarks: { type: String, trim: true },
+      billNo: { type: String, trim: true },
+      billValue: { type: Number },
+      gst: { type: Number },
+      verificationStatus: { type: String, trim: true },
+      estimateStatus: { type: String, trim: true },
+      onlineFarmerShareStatus: { type: String, trim: true },
+      challanStatus: { type: String, trim: true },
+      tallyBillStatus: { type: String, trim: true },
+      billUploadStatus: { type: String, trim: true },
+      verificationDone: { type: String, trim: true },
+      verificationDate: { type: Date },
+      verification: { type: String, trim: true },
+      reason: { type: String, trim: true },
+      estimate: { type: Number },
+      tallyBill: { type: Number },
+      farmerShare: { type: Number },
+      billUploadPending: { type: Number },
+      miSurvey: { type: Number },
+      verificationFlag: { type: Number },
+      newVerified: { type: Number },
+      status: { type: String, trim: true },
+      applicationStatus: { type: String, trim: true },
+      delay: { type: String, trim: true },
+      result: { type: String, trim: true },
+      dateOfApplication: { type: Date },
+   },
+   { timestamps: true }
+);
+
+export default mongoose.model('MainRecord', mainRecordSchema);

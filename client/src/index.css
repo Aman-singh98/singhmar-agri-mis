@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --color-primary: #16a34a;
+    --color-primary-dark: #15803d;
+    --color-primary-light: #22c55e;
+    --color-primary-muted: #dcfce7;
+    --color-primary-text: #166534;
+    --color-sidebar-bg: #1c1917;
+    --color-body-bg: #f9fafb;
+    --color-danger: #dc2626;
+    --color-danger-dark: #b91c1c;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+  }
+
+  /* ── Dark mode body ── */
+  .dark body {
+    @apply bg-gray-950 text-gray-100;
+  }
+}
