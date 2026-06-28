@@ -37,7 +37,7 @@ const MobileDrawer = ({ open, onClose, selectedFY, setSelectedFY, fyLoading, onR
           <div className="bg-gray-900 px-6 py-6 flex items-start justify-between">
             <div>
               <p className="text-[10px] font-bold tracking-widest uppercase text-emerald-400 mb-1">
-                Agarwal MIS
+                Singhmar MIS
               </p>
               <h2 className="text-lg font-bold text-white tracking-tight">Controls</h2>
               <p className="text-xs text-gray-400 mt-1">Financial year & refresh</p>
@@ -113,7 +113,7 @@ const DashboardHeader = ({ selectedFY, setSelectedFY, fyLoading, totalAcres, onR
   <div>
     <p style={{ fontFamily: "'DM Sans', sans-serif" }}
       className="text-[10px] font-bold tracking-widest uppercase text-emerald-600 mb-1">
-      🌾 Agarwal MIS
+      🌾 Singhmar MIS
     </p>
 
     <h1 className="text-3xl sm:text-4xl leading-tight">
@@ -174,7 +174,7 @@ const DashboardHeader = ({ selectedFY, setSelectedFY, fyLoading, totalAcres, onR
         <div className="md:hidden space-y-2">
           <div>
             <p className="text-[10px] font-bold tracking-widest uppercase text-emerald-600 mb-0.5">
-              🌾 Agarwal MIS
+              🌾 Singhmar MIS
             </p>
             <h1 className="text-xl font-semibold leading-tight">
               <span className="bg-gradient-to-r from-emerald-600 to-green-400 bg-clip-text text-transparent">

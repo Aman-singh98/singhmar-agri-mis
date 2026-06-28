@@ -84,7 +84,7 @@ function NotFoundPage() {
 					</button>
 				</div>
 				<p className="text-[10px] uppercase tracking-widest text-stone-300 font-medium">
-					Agarwal MIS Software
+					Singhmar Agricultural Management Information System
 				</p>
 
 			</div>

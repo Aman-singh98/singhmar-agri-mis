@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "MIS Software Backend",
+  "description": "Agricultural Management Information System Backend",
   "main": "server.js",
   "type": "module",
   "scripts": {

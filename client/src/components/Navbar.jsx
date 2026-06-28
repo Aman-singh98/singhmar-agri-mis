@@ -50,10 +50,10 @@
 // 						</div>
 // 						<div className="leading-tight min-w-0">
 // 							<h1 className="text-sm sm:text-base md:text-lg font-bold text-stone-900 dark:text-white tracking-tight truncate">
-// 								<span className="font-semibold text-green-900 dark:text-green-400">Agarwal</span>
+// 								<span className="font-semibold text-green-900 dark:text-green-400">Singhmar</span>
 // 							</h1>
 // 							<p className="text-[10px] uppercase tracking-widest text-green-700 dark:text-green-500 font-medium">
-// 								MIS Software — Management Information System
+// 								Agricultural Management Information System — Management Information System
 // 							</p>
 // 						</div>
 // 					</div>
@@ -186,11 +186,11 @@ function Navbar({ onMenuClick }) {
 					{/* Brand text */}
 					<div className="leading-tight min-w-0">
 						<h1 className="text-sm sm:text-base md:text-lg font-bold text-stone-900 dark:text-white tracking-tight truncate">
-							<span className="font-semibold text-green-900 dark:text-green-400">MIS Software</span>
+							<span className="font-semibold text-green-900 dark:text-green-400">Agricultural Management Information System</span>
 						</h1>
 						{/* Tagline: hidden on tiny screens, shown sm+ */}
 						<p className="hidden xs:block text-[9px] sm:text-[10px] uppercase tracking-widest text-green-700 dark:text-green-500 font-medium truncate">
-							MIS Software — Management Information System
+							Agricultural Management Information System — Management Information System
 						</p>
 					</div>
 				</div>
