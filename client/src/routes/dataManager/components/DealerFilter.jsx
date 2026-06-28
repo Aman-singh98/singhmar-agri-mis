@@ -1,5 +1,3 @@
-
-// DealerFilter.jsx (Redesigned)
 import { useState, useMemo } from "react";
 import { HiX, HiSearch, HiOfficeBuilding } from "react-icons/hi";
 

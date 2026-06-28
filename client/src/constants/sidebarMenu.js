@@ -1,56 +1,7 @@
-// import { HiReply, HiCog, HiChartPie, HiOfficeBuilding, HiUpload, HiUserGroup, HiCollection } from "react-icons/hi";
-// import { FULL_PATHS } from "./routes";
-
-// const ADMIN_MENU = [
-// 	{
-// 		name: "Dashboard",
-// 		icon: HiChartPie,
-// 		subMenu: [
-// 			{ name: "Overview", path: FULL_PATHS.DASHBOARD, icon: HiUserGroup },
-// 		],
-// 	},
-// 	{ name: "Upload Data", icon: HiUpload, path: FULL_PATHS.UPLOAD },
-// 	{ name: "Data Manager", icon: HiCollection, path: FULL_PATHS.MANAGER },
-// 		{ name: "Main FY", icon: HiCollection, path: FULL_PATHS.MAIN_FY },
-
-// 	{ name: 'Dealer Master', icon: HiOfficeBuilding, path: FULL_PATHS.DEALER_MASTER },
-// 	{ name: 'Farmer Record', icon: HiOfficeBuilding, path: FULL_PATHS.FARMER_RECORD },
-// 	{ name: 'Inventory Manage', icon: HiCollection, path: FULL_PATHS.INVENTORY_MANAGE },
-
-// 	{
-// 		name: 'Manual Entries',
-// 		icon: HiOfficeBuilding,
-// 		subMenu: [
-// 			{ name: "Cash & Incentives", path: FULL_PATHS.MANUAL_ENTRY, icon: HiOfficeBuilding },
-// 			{ name: "Shifting Entries", path: FULL_PATHS.SHIFTING_ENTRY, icon: HiCollection },
-// 			{ name: "Return Entries", path: FULL_PATHS.RETURN_ENTRY, icon: HiReply }
-// 		]
-// 	},
-// 	{
-// 		name: "Settings",
-// 		icon: HiCog,
-// 		subMenu: [
-// 			{ name: "Dealers", path: FULL_PATHS.DEALER_LIST, icon: HiOfficeBuilding },
-// 			{ name: "Dealer item rate", path: FULL_PATHS.DEALER_ITEM_RATE, icon: HiOfficeBuilding },
-// 			{ name: "Financial Years", path: FULL_PATHS.FINANCIAL_YEARS, icon: HiCollection },
-// 			{ name: "Items rate", path: FULL_PATHS.ITEMS_LIST, icon: HiCollection }
-// 		]
-// 	}
-// ];
-// export function sidebarMenu(user) {
-// 	return {
-// 		admin: ADMIN_MENU,
-// 	};
-// }
-
 import {
 	HiReply,
 	HiCog,
 	HiChartPie,
-	HiOfficeBuilding,
-	HiUpload,
-	HiUserGroup,
-	HiCollection,
 	HiViewGrid,          // Dashboard Overview
 	HiUsers,             // User Management
 	HiIdentification,    // User Manage

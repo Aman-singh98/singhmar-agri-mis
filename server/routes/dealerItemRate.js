@@ -13,7 +13,6 @@ import {
    updateDealerItemRate,
    deleteDealerItemRate,
 } from "../controllers/dealerItemRate.js";
-// import { protect } from "../middleware/auth.middleware.js"; // swap for your auth middleware name
 
 const router = express.Router();
 

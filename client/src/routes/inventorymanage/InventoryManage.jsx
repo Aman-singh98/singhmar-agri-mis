@@ -1,5 +1,3 @@
-
-// InventoryManage.jsx
 import { useState } from "react";
 import ManualEntry from "../UploadPage/components/ManualEntry";
 import RecordsTable from "../ManualEntries/DealerResources/components/RecordsTable";

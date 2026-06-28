@@ -1,4 +1,3 @@
-
 import express from 'express';
 import { protect } from "../middleware/authMiddleware.js";
 import { addDealer, deleteDealer, getAllDealers, updateDealer } from '../controllers/dealer/dealerMeta.js';

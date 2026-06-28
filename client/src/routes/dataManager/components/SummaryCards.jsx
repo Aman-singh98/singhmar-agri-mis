@@ -1,6 +1,3 @@
-
-
-// SummaryCards.jsx
 import { HiTrendingUp, HiCurrencyRupee, HiUsers, HiDocumentText, HiScale, HiCalculator } from "react-icons/hi";
 
 function formatValue(val) {

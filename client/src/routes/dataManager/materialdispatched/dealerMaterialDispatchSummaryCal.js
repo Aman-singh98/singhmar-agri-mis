@@ -3,7 +3,7 @@
 const VALID_MI_REGEX = /^MI\d+$/i;
 function classifyMI(miNumber) {
    const val = String(miNumber ?? "").trim();
-   if (!val)                     return "withoutMI";
+   if (!val) return "withoutMI";
    if (VALID_MI_REGEX.test(val)) return "withMI";
    return "other";
 }
@@ -15,10 +15,10 @@ function toNumber(v) {
 
 export function calcDealerMaterialDispatchSummary({
    dispatched = [],
-   receipts   = [],
-   adjusted   = [],
-   records    = [],   // ← raw file records (DealerMainSummary ko jo milte hain) —
-                       //   isी se "Document Received in Acre" (Mini/Drip) nikalta hai.
+   receipts = [],
+   adjusted = [],
+   records = [],   // ← raw file records (DealerMainSummary ko jo milte hain) —
+   //   isी se "Document Received in Acre" (Mini/Drip) nikalta hai.
 }) {
 
    // ── Step 0: build a dealerName → farmerDealerCode lookup ──────────────────
@@ -56,7 +56,7 @@ export function calcDealerMaterialDispatchSummary({
       const code = resolveCode(r);
       if (!dealerMap.has(code)) {
          dealerMap.set(code, {
-            dealerName:       r.dealerName       ?? "",
+            dealerName: r.dealerName ?? "",
             farmerDealerCode: code,
          });
       } else if (!dealerMap.get(code).dealerName && r.dealerName) {
@@ -110,11 +110,11 @@ export function calcDealerMaterialDispatchSummary({
 
       // -- Document Received in Acre (records se, MI-validated) --
       const doc = docMap.get(code) ?? { miniSprinklerAcres: 0, dripIrrigationAcres: 0 };
-      const miniSprinklerDocAcres  = doc.miniSprinklerAcres;
+      const miniSprinklerDocAcres = doc.miniSprinklerAcres;
       const dripIrrigationDocAcres = doc.dripIrrigationAcres;
 
       // -- Difference --
-      const diffMini = miniSprinklerDocAcres  - miniAcresDispatched;
+      const diffMini = miniSprinklerDocAcres - miniAcresDispatched;
       const diffDrip = dripIrrigationDocAcres - dripAcresDispatched;
 
       // -- Total Doc Received --
@@ -135,20 +135,20 @@ export function calcDealerMaterialDispatchSummary({
       );
 
       // -- Opening Balance (from Adjusted) --
-      const dealerAdjusted  = adjusted.filter(r => resolveCode(r) === code);
-      const openingBalance   = dealerAdjusted.reduce(
+      const dealerAdjusted = adjusted.filter(r => resolveCode(r) === code);
+      const openingBalance = dealerAdjusted.reduce(
          (s, r) => s + (Number(r.amount) || 0), 0
       );
 
       // -- Receipts --
       const dealerReceipts = receipts.filter(r => resolveCode(r) === code);
-      const totalReceipts  = dealerReceipts.reduce(
+      const totalReceipts = dealerReceipts.reduce(
          (s, r) => s + (Number(r.amount) || 0), 0
       );
 
       // -- TOTAL Outstanding --
       const totalOutstanding = farmerShareMini + farmerShareDrip + farmerShareHdpe
-                             + openingBalance - totalReceipts;
+         + openingBalance - totalReceipts;
 
       // -- Outstanding (fy) --
       const outstanding = totalOutstanding - openingBalance;
@@ -160,9 +160,9 @@ export function calcDealerMaterialDispatchSummary({
          // Display labels — blank dealerName/code show as "Unknown Dealer" / "N/A"
          // so the row is never empty. farmerDealerCode here is the RESOLVED group
          // code (rows with blank own-code but matching dealerName are folded in).
-         dealerName:            dealer.dealerName?.trim() ? dealer.dealerName : "Unknown Dealer",
-         farmerDealerCode:      code?.trim() ? code : "N/A",
-         farmerDealerCodeRaw:   code,   // resolved grouping code (may be "" if truly unresolvable)
+         dealerName: dealer.dealerName?.trim() ? dealer.dealerName : "Unknown Dealer",
+         farmerDealerCode: code?.trim() ? code : "N/A",
+         farmerDealerCodeRaw: code,   // resolved grouping code (may be "" if truly unresolvable)
 
          // Material Dispatched
          miniAcresDispatched,
@@ -187,7 +187,7 @@ export function calcDealerMaterialDispatchSummary({
 
          // Balance columns
          openingBalance,
-         receipts:           totalReceipts,
+         receipts: totalReceipts,
          totalOutstanding,
          outstanding,
          balanceOutstanding,

@@ -1,5 +1,3 @@
-
-// HisabPage.jsx
 import { useState, useEffect, useCallback } from "react";
 import { useDealerMaster } from "../../hooks/useDealerMaster";
 import api from "../../api/axios";

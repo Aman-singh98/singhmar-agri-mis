@@ -1,17 +1,16 @@
-
-import { modelMap }                          from '../constant/modelMap.js';
-import { generateDealersPDF }                from '../helpers/pdf/dealersPDF.js';
-import { generateTdsRecordPDF }              from '../helpers/pdf/tdsRecordPDF.js';
-import { generateTallyBillPDF }              from '../helpers/pdf/tallyBillPDF.js';
-import { generateSubsidyPDF }                from '../helpers/pdf/subsidyPDF.js';
-import { generateMicadaPDF }                 from '../helpers/pdf/micadaPDF.js';
-import { generateHisabPDF }                  from '../helpers/pdf/generateHisabPDF.js';
-import { generateMatrixPDF }                 from '../helpers/pdf/inventoryPDF.js';
-import { generateFarmerSharePDF }            from '../helpers/pdf/farmerSharePDF.js';
-import { generateMainFilePDF }               from '../helpers/pdf/mainFilePDF.js';
-import { generateAdjustedSheetPDF }          from '../helpers/pdf/adjustedSheetPDF.js';
-import { generateMainFySheetPDF }            from '../helpers/pdf/mainFySheetPDF.js';
-import { generateMaterialDispatchedPDF }     from '../helpers/pdf/materialDispatchedPDF.js';
+import { modelMap } from '../constant/modelMap.js';
+import { generateDealersPDF } from '../helpers/pdf/dealersPDF.js';
+import { generateTdsRecordPDF } from '../helpers/pdf/tdsRecordPDF.js';
+import { generateTallyBillPDF } from '../helpers/pdf/tallyBillPDF.js';
+import { generateSubsidyPDF } from '../helpers/pdf/subsidyPDF.js';
+import { generateMicadaPDF } from '../helpers/pdf/micadaPDF.js';
+import { generateHisabPDF } from '../helpers/pdf/generateHisabPDF.js';
+import { generateMatrixPDF } from '../helpers/pdf/inventoryPDF.js';
+import { generateFarmerSharePDF } from '../helpers/pdf/farmerSharePDF.js';
+import { generateMainFilePDF } from '../helpers/pdf/mainFilePDF.js';
+import { generateAdjustedSheetPDF } from '../helpers/pdf/adjustedSheetPDF.js';
+import { generateMainFySheetPDF } from '../helpers/pdf/mainFySheetPDF.js';
+import { generateMaterialDispatchedPDF } from '../helpers/pdf/materialDispatchedPDF.js';
 import { generateMaterialDispatchReceiptsPDF } from '../helpers/pdf/materialDispatchReceiptsPDF.js';
 import { generateMainFySummaryPDF } from '../helpers/pdf/generateMainFySummaryPDF.js';
 import { generateMainFyDealerSummaryPDF } from '../helpers/pdf/generateMainFyDealerSummaryPDF.js';
@@ -37,18 +36,18 @@ const ALLOW_EMPTY_IDS = new Set([
 ]);
 
 const PDF_GENERATORS = new Map([
-   ['dealer',                           generateDealersPDF],
-   ['tds-record',                       generateTdsRecordPDF],
-   ['tally-bill',                       generateTallyBillPDF],
-   ['subsidy',                          generateSubsidyPDF],
-   ['micada',                           generateMicadaPDF],
-   ['inventory',                        generateMatrixPDF],
-   ['farmer-share',                     generateFarmerSharePDF],
-   ['main-file',                        generateMainFilePDF],
-   ['main-fySheet',                     generateMainFySheetPDF],
-   ['material-dispatch-dispatched',     generateMaterialDispatchedPDF],
-   ['material-dispatch-receipts',       generateMaterialDispatchReceiptsPDF],
-   ['material-dispatch-adjusted',       generateAdjustedSheetPDF],
+   ['dealer', generateDealersPDF],
+   ['tds-record', generateTdsRecordPDF],
+   ['tally-bill', generateTallyBillPDF],
+   ['subsidy', generateSubsidyPDF],
+   ['micada', generateMicadaPDF],
+   ['inventory', generateMatrixPDF],
+   ['farmer-share', generateFarmerSharePDF],
+   ['main-file', generateMainFilePDF],
+   ['main-fySheet', generateMainFySheetPDF],
+   ['material-dispatch-dispatched', generateMaterialDispatchedPDF],
+   ['material-dispatch-receipts', generateMaterialDispatchReceiptsPDF],
+   ['material-dispatch-adjusted', generateAdjustedSheetPDF],
 ]);
 
 // ── Special models — handled directly from req.body.data ──────────────────────
@@ -56,10 +55,10 @@ const SPECIAL_MODELS = new Set([
    'hisab-detail',
    'main-fySheet-today-summary',
    'main-fySheet-dealer-summary',
-   'popup-records',  
-   'main-micada-comparision',  
+   'popup-records',
+   'main-micada-comparision',
    'dealer-mainfile-records',
-   'dealer-mainfile-summary-records'           
+   'dealer-mainfile-summary-records'
 ]);
 
 // ── Models that support farmerDealerCode in header when filtered by dealer ────
@@ -101,7 +100,7 @@ export async function downloadPDF(req, res) {
                }
             }
          }
-           if (model === 'main-fySheet-dealer-summary') {
+         if (model === 'main-fySheet-dealer-summary') {
             try {
                return await generateMainFyDealerSummaryPDF(data, res);
             } catch (err) {
@@ -112,51 +111,51 @@ export async function downloadPDF(req, res) {
             }
          }
 
-   if (model === 'popup-records') {
-   try {
-      return await generatePopupRecordsPDF(data, res);
-   } catch (err) {
-      console.error('PDF error:', err);
-      if (!res.headersSent) {
-         return res.status(500).json({ message: 'PDF generation failed', success: false });
-      }
-   }
-}
+         if (model === 'popup-records') {
+            try {
+               return await generatePopupRecordsPDF(data, res);
+            } catch (err) {
+               console.error('PDF error:', err);
+               if (!res.headersSent) {
+                  return res.status(500).json({ message: 'PDF generation failed', success: false });
+               }
+            }
+         }
 
-if (model === 'main-micada-comparision') {
-   try {
-      return await generateMainMicadaComparisionRecordsPDF(data, res);
-   } catch (err) {
-      console.error('PDF error:', err);
-      if (!res.headersSent) {
-         return res.status(500).json({ message: 'PDF generation failed', success: false });
-      }
-   }
-}
+         if (model === 'main-micada-comparision') {
+            try {
+               return await generateMainMicadaComparisionRecordsPDF(data, res);
+            } catch (err) {
+               console.error('PDF error:', err);
+               if (!res.headersSent) {
+                  return res.status(500).json({ message: 'PDF generation failed', success: false });
+               }
+            }
+         }
 
 
-// ── ADD this handler block inside downloadPDF(), inside the SPECIAL_MODELS block ──
-if (model === 'dealer-mainfile-records') {
-   try {
-      return await generateDealerMainFilePDF(data, res);
-   } catch (err) {
-      console.error('PDF error:', err);
-      if (!res.headersSent) {
-         return res.status(500).json({ message: 'PDF generation failed', success: false });
-      }
-   }
-}
+         // ── ADD this handler block inside downloadPDF(), inside the SPECIAL_MODELS block ──
+         if (model === 'dealer-mainfile-records') {
+            try {
+               return await generateDealerMainFilePDF(data, res);
+            } catch (err) {
+               console.error('PDF error:', err);
+               if (!res.headersSent) {
+                  return res.status(500).json({ message: 'PDF generation failed', success: false });
+               }
+            }
+         }
 
-if (model === 'dealer-mainfile-summary-records') {
-   try {
-      return await generateMainFileDealerSummaryPDF(data, res);
-   } catch (err) {
-      console.error('PDF error:', err);
-      if (!res.headersSent) {
-         return res.status(500).json({ message: 'PDF generation failed', success: false });
-      }
-   }
-}
+         if (model === 'dealer-mainfile-summary-records') {
+            try {
+               return await generateMainFileDealerSummaryPDF(data, res);
+            } catch (err) {
+               console.error('PDF error:', err);
+               if (!res.headersSent) {
+                  return res.status(500).json({ message: 'PDF generation failed', success: false });
+               }
+            }
+         }
 
          return res.status(400).json({ message: `No handler for special model "${model}"`, success: false });
       }
@@ -222,8 +221,8 @@ if (model === 'dealer-mainfile-summary-records') {
             if (subsidy) {
                rec.farmerName = subsidy.name;
                rec.fatherName = subsidy.fatherName;
-               rec.type       = subsidy.type;
-               rec.village    = subsidy.village;
+               rec.type = subsidy.type;
+               rec.village = subsidy.village;
             }
          }
       }
@@ -235,7 +234,7 @@ if (model === 'dealer-mainfile-summary-records') {
       }
 
       // ── Inventory: fetch rates ────────────────────────────────────────────
-      let rates       = [];
+      let rates = [];
       let dealerRates = [];
       if (model === 'inventory') {
          rates = await modelMap['item-rate'].find({}).lean();

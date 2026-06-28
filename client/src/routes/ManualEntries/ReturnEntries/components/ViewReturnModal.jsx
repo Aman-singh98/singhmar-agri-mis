@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { CATEGORY_CONFIG, entryGrandTotal } from "../constants";
 import { fetchReturnEntryWithRates } from "./returnEntryRateService";

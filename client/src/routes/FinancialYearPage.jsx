@@ -1,38 +1,3 @@
-
-// import { HiCollection } from "react-icons/hi";
-// import { FinancialYearManager } from "../components/app";
-
-// function FinancialYearPage() {
-//    return (
-//       <div className="flex flex-col h-full overflow-hidden bg-white">
-
-//          {/* ── Page Header ───────────────────────────────────────────────────── */}
-//          <div className="flex-none bg-white border-b px-6 py-4">
-//             <div className="flex items-center gap-3 mb-2">
-//                <div className="p-2 bg-green-700 border border-green-300">
-//                   <HiCollection className="w-5 h-5 text-white" />
-//                </div>
-//                <h1 className="text-xl font-bold text-black">Financial Years</h1>
-//             </div>
-//             <p className="text-sm text-black/70 ml-11">
-//                Add or remove financial years used across the system.
-//             </p>
-//          </div>
-
-//          {/* ── Content ───────────────────────────────────────────────────────── */}
-//          <div className="flex-1 overflow-y-auto px-6 py-6">
-           
-//                   <FinancialYearManager />
-//          </div>
-//       </div>
-//    );
-// }
-
-// export default FinancialYearPage;
-
-
-
-
 import { HiCollection } from "react-icons/hi";
 import { FinancialYearManager } from "../components/app";
 

@@ -1,20 +1,19 @@
-
-import { modelMap }                      from '../constant/modelMap.js';
-import { generateInventoryExcel }        from '../helpers/excel/generateInventoryExcel.js';
-import { generateMainFileExcel }         from '../helpers/excel/generateMainFileExcel.js';
-import { generateTallyBillExcel }        from '../helpers/excel/generateTallyBillExcel.js';
-import { generateTdsRecordExcel }        from '../helpers/excel/generateTdsRecordExcel.js';
-import { generateSubsidyExcel }          from '../helpers/excel/generateSubsidyExcel.js';
-import { generateMicadaExcel }           from '../helpers/excel/generateMicadaExcel.js';
-import { generateFarmerShareExcel }      from '../helpers/excel/generateFarmerShareExcel.js';
-import { generateMainFySheetExcel }      from '../helpers/excel/generateMainFySheetExcel.js';
-import { generateMaterialDispatchedExcel }       from '../helpers/excel/generateMaterialDispatchedExcel.js';
+import { modelMap } from '../constant/modelMap.js';
+import { generateInventoryExcel } from '../helpers/excel/generateInventoryExcel.js';
+import { generateMainFileExcel } from '../helpers/excel/generateMainFileExcel.js';
+import { generateTallyBillExcel } from '../helpers/excel/generateTallyBillExcel.js';
+import { generateTdsRecordExcel } from '../helpers/excel/generateTdsRecordExcel.js';
+import { generateSubsidyExcel } from '../helpers/excel/generateSubsidyExcel.js';
+import { generateMicadaExcel } from '../helpers/excel/generateMicadaExcel.js';
+import { generateFarmerShareExcel } from '../helpers/excel/generateFarmerShareExcel.js';
+import { generateMainFySheetExcel } from '../helpers/excel/generateMainFySheetExcel.js';
+import { generateMaterialDispatchedExcel } from '../helpers/excel/generateMaterialDispatchedExcel.js';
 import { generateMaterialDispatchReceiptsExcel } from '../helpers/excel/generateMaterialDispatchReceiptsExcel.js';
-import { generateAdjustedSheetExcel }    from '../helpers/excel/generateAdjustedSheetExcel.js';
-import { generateDealersExcel }          from '../helpers/excel/generateDealersExcel.js';
-import { generateMainFySummaryExcel }    from '../helpers/excel/generateMainFySummaryExcel.js';   // ← new
-import { generateMainFyDealerSummaryExcel }    from '../helpers/excel/generateMainFyDealerSummaryExcel.js';   // ← new
-import { generatePopupRecordsExcel }     from '../helpers/excel/generatePopupRecordsExcel.js';    // ← new
+import { generateAdjustedSheetExcel } from '../helpers/excel/generateAdjustedSheetExcel.js';
+import { generateDealersExcel } from '../helpers/excel/generateDealersExcel.js';
+import { generateMainFySummaryExcel } from '../helpers/excel/generateMainFySummaryExcel.js';   // ← new
+import { generateMainFyDealerSummaryExcel } from '../helpers/excel/generateMainFyDealerSummaryExcel.js';   // ← new
+import { generatePopupRecordsExcel } from '../helpers/excel/generatePopupRecordsExcel.js';    // ← new
 import { generateMainMicadaComparisionRecordsExcel } from '../helpers/excel/generateMainMicadaComparisionRecordsExcel.js';
 import { generateDealerMainFileExcel } from '../helpers/excel/generateDealerMainFileExcel.js';
 import { generateMainFileDealerSummaryExcel } from '../helpers/excel/generateMainFileDealerSummaryExcel.js';
@@ -42,45 +41,45 @@ const SPECIAL_MODELS = new Set([
    'main-fySheet-today-summary',
    'main-fySheet-dealer-summary',
    'popup-records',
-      'main-micada-comparision',  
-      'dealer-mainfile-records',  
-      'dealer-mainfile-summary-records'          // ← add karo
+   'main-micada-comparision',
+   'dealer-mainfile-records',
+   'dealer-mainfile-summary-records'          // ← add karo
 
 ]);
 
 // ─── Excel generators map ─────────────────────────────────────────────────────
 const EXCEL_GENERATORS = new Map([
-   ['dealer',                        generateDealersExcel],
-   ['tds-record',                    generateTdsRecordExcel],
-   ['tally-bill',                    generateTallyBillExcel],
-   ['subsidy',                       generateSubsidyExcel],
-   ['micada',                        generateMicadaExcel],
-   ['inventory',                     generateInventoryExcel],
-   ['farmer-share',                  generateFarmerShareExcel],
-   ['main-file',                     generateMainFileExcel],
-   ['main-fySheet',                  generateMainFySheetExcel],
-   ['material-dispatch-dispatched',  generateMaterialDispatchedExcel],
-   ['material-dispatch-receipts',    generateMaterialDispatchReceiptsExcel],
-   ['material-dispatch-adjusted',    generateAdjustedSheetExcel],
+   ['dealer', generateDealersExcel],
+   ['tds-record', generateTdsRecordExcel],
+   ['tally-bill', generateTallyBillExcel],
+   ['subsidy', generateSubsidyExcel],
+   ['micada', generateMicadaExcel],
+   ['inventory', generateInventoryExcel],
+   ['farmer-share', generateFarmerShareExcel],
+   ['main-file', generateMainFileExcel],
+   ['main-fySheet', generateMainFySheetExcel],
+   ['material-dispatch-dispatched', generateMaterialDispatchedExcel],
+   ['material-dispatch-receipts', generateMaterialDispatchReceiptsExcel],
+   ['material-dispatch-adjusted', generateAdjustedSheetExcel],
 ]);
 
 // ─── Filename map ─────────────────────────────────────────────────────────────
 function getFilename(model, financialYear, dealerName) {
-   const fy   = financialYear ? `_${financialYear}` : '';
+   const fy = financialYear ? `_${financialYear}` : '';
    const name = dealerName ? `_${dealerName.replace(/\s+/g, '_')}` : '';
    const labels = {
-      'dealer':                        'Dealers',
-      'tds-record':                    'TDS_Record',
-      'tally-bill':                    'Tally_Bills',
-      'subsidy':                       'Subsidy',
-      'micada':                        'MICADA',
-      'inventory':                     'Inventory_Matrix',
-      'farmer-share':                  'Farmer_Share',
-      'main-file':                     'Main_File',
-      'main-fySheet':                  'Main_FY_Sheet',
-      'material-dispatch-dispatched':  'Material_Dispatched',
-      'material-dispatch-receipts':    'Material_Receipts',
-      'material-dispatch-adjusted':    'Material_Adjusted',
+      'dealer': 'Dealers',
+      'tds-record': 'TDS_Record',
+      'tally-bill': 'Tally_Bills',
+      'subsidy': 'Subsidy',
+      'micada': 'MICADA',
+      'inventory': 'Inventory_Matrix',
+      'farmer-share': 'Farmer_Share',
+      'main-file': 'Main_File',
+      'main-fySheet': 'Main_FY_Sheet',
+      'material-dispatch-dispatched': 'Material_Dispatched',
+      'material-dispatch-receipts': 'Material_Receipts',
+      'material-dispatch-adjusted': 'Material_Adjusted',
    };
    const base = labels[model] ?? model;
    return `${base}${fy}${name}.xlsx`;
@@ -101,36 +100,36 @@ export async function downloadExcel(req, res) {
          let outFileName;
 
          if (model === 'main-fySheet-today-summary') {
-            buffer      = await generateMainFySummaryExcel(data);
+            buffer = await generateMainFySummaryExcel(data);
             outFileName = `Today_Summary_${data.date ?? 'export'}.xlsx`;
          }
-          if (model === 'main-fySheet-dealer-summary') {
-            buffer      = await generateMainFyDealerSummaryExcel(data);
+         if (model === 'main-fySheet-dealer-summary') {
+            buffer = await generateMainFyDealerSummaryExcel(data);
             outFileName = `Today_Summary_${data.date ?? 'export'}.xlsx`;
          }
 
          if (model === 'popup-records') {
-            buffer      = await generatePopupRecordsExcel(data);
-            const safe  = (data.title ?? 'Records').replace(/[^a-zA-Z0-9_\-]/g, '_').replace(/_+/g, '_');
+            buffer = await generatePopupRecordsExcel(data);
+            const safe = (data.title ?? 'Records').replace(/[^a-zA-Z0-9_\-]/g, '_').replace(/_+/g, '_');
             outFileName = `${safe}.xlsx`;
          }
          if (model === 'main-micada-comparision') {
-            buffer      = await generateMainMicadaComparisionRecordsExcel(data);
-            const safe  = (data.title ?? 'Records').replace(/[^a-zA-Z0-9_\-]/g, '_').replace(/_+/g, '_');
+            buffer = await generateMainMicadaComparisionRecordsExcel(data);
+            const safe = (data.title ?? 'Records').replace(/[^a-zA-Z0-9_\-]/g, '_').replace(/_+/g, '_');
             outFileName = `${safe}.xlsx`;
          }
          // ── ADD this handler inside downloadExcel(), in the SPECIAL_MODELS block ──────
-if (model === 'dealer-mainfile-records') {
-   buffer      = await generateDealerMainFileExcel(data);
-   const safe  = (data.title ?? 'File_Records').replace(/[^a-zA-Z0-9_\-]/g, '_').replace(/_+/g, '_');
-   outFileName = `${safe}.xlsx`;
-}
+         if (model === 'dealer-mainfile-records') {
+            buffer = await generateDealerMainFileExcel(data);
+            const safe = (data.title ?? 'File_Records').replace(/[^a-zA-Z0-9_\-]/g, '_').replace(/_+/g, '_');
+            outFileName = `${safe}.xlsx`;
+         }
 
-if (model === 'dealer-mainfile-summary-records') {
-   buffer      = await generateMainFileDealerSummaryExcel(data);
-   const safe  = (data.title ?? 'File_Records').replace(/[^a-zA-Z0-9_\-]/g, '_').replace(/_+/g, '_');
-   outFileName = `${safe}.xlsx`;
-}
+         if (model === 'dealer-mainfile-summary-records') {
+            buffer = await generateMainFileDealerSummaryExcel(data);
+            const safe = (data.title ?? 'File_Records').replace(/[^a-zA-Z0-9_\-]/g, '_').replace(/_+/g, '_');
+            outFileName = `${safe}.xlsx`;
+         }
 
          res.setHeader('Content-Disposition', `attachment; filename="${outFileName}"`);
          res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -195,14 +194,14 @@ if (model === 'dealer-mainfile-summary-records') {
             if (subsidy) {
                rec.farmerName = subsidy.name;
                rec.fatherName = subsidy.fatherName;
-               rec.type       = subsidy.type;
-               rec.village    = subsidy.village;
+               rec.type = subsidy.type;
+               rec.village = subsidy.village;
             }
          }
       }
 
       // ── Inventory: fetch rates ────────────────────────────────────────────
-      let rates       = [];
+      let rates = [];
       let dealerRates = [];
       if (model === 'inventory') {
          rates = await modelMap['item-rate'].find({}).lean();

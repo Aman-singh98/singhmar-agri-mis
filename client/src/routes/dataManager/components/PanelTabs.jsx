@@ -1,8 +1,5 @@
-
-// PanelTabs.jsx
 import Pdf from "../../../components/Pdf";
 import Excel from "../../../components/Excel";
-import { HiDocumentText, HiTable } from "react-icons/hi";
 
 function PanelTabs({
    tabs,

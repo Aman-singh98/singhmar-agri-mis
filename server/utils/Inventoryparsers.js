@@ -1,28 +1,3 @@
-
-
-// InventoryParsers.js
-//
-// Parses TALLY_INVENTORY.xlsx  →  "TALLY INVENTRY" sheet
-//
-// Sheet layout
-// ─────────────────────────────────────────────────────────────────────────────
-// row 0 : company title
-// row 1 : empty
-// row 2 : financial-year string  e.g. "Form : 1-Apr-22 to 31-Mar-23"
-// row 3 : sub-header
-// row 4 : column headers  ← product names are read from HERE (by name, not position)
-// row 5+: data rows
-//
-// Fixed columns (always present):
-//   col 0  : Date
-//   col 1  : Challan No.
-//   col 2  : Acre
-//   last col (after all products) : Total Items
-//
-// Product columns can appear in ANY order. Each header is matched against
-// ITEM_NAME_TO_KEY (with fuzzy/normalized matching) to get the model field name.
-// Unknown headers are collected and an error is thrown listing all unmatched ones.
-
 import XLSX from 'xlsx';
 import { KEY_TO_ITEM_NAME } from '../constant/ItemRates.js';
 

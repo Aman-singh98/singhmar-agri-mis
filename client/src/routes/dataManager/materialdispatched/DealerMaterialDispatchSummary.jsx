@@ -1,5 +1,3 @@
-
-
 function fmt(val) {
    if (val === null || val === undefined || val === "") return "—";
    const n = Number(val);
