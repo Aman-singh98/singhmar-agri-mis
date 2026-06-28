@@ -215,7 +215,7 @@
 // 					</div>
 // 				</div>
 // 				<div>
-// 					<p style={{ color: "#86efac", fontSize: 16, fontWeight: 700, letterSpacing: "0.1em", fontFamily: "'DM Sans'" }}>Singhmar</p>
+// 					<p style={{ color: "#86efac", fontSize: 16, fontWeight: 700, letterSpacing: "0.1em", fontFamily: "'DM Sans'" }}>AGARWAL</p>
 // 					<p style={{ color: "#86efac", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase" }}>
 // 						Agricultural Management Information System — Management Information System
 // 					</p>
@@ -275,7 +275,7 @@
 // 					<div style={{ width: 12, height: 12, background: "white", clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }} />
 // 				</div>
 // 				<div>
-// 					<p style={{ color: "#052e16", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em" }}>Singhmar</p>
+// 					<p style={{ color: "#052e16", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em" }}>AGARWAL</p>
 // 					<p style={{ color: "#166534", fontSize: 9, letterSpacing: "0.25em", textTransform: "uppercase" }}>Agricultural Management Information System</p>
 // 				</div>
 // 			</div>
@@ -676,7 +676,7 @@ const BrandPanel = () => (
 					</div>
 				</div>
 				<div>
-					<p style={{ color: "#86efac", fontSize: 16, fontWeight: 700, letterSpacing: "0.1em", fontFamily: "'DM Sans'" }}>Singhmar</p>
+					<p style={{ color: "#86efac", fontSize: 16, fontWeight: 700, letterSpacing: "0.1em", fontFamily: "'DM Sans'" }}>AGARWAL</p>
 					<p style={{ color: "#86efac", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase" }}>
 						Agricultural Management Information System — Management Information System
 					</p>
@@ -745,7 +745,7 @@ const FormPanel = ({
 					<div style={{ width: 12, height: 12, background: "white", clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }} />
 				</div>
 				<div>
-					<p style={{ color: "#052e16", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em" }}>Singhmar</p>
+					<p style={{ color: "#052e16", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em" }}>AGARWAL</p>
 					<p style={{ color: "#166534", fontSize: 9, letterSpacing: "0.25em", textTransform: "uppercase" }}>Agricultural Management Information System</p>
 				</div>
 			</div>

@@ -121,7 +121,7 @@ export default function Dashboard() {
 
           <div className="flex items-center justify-between pt-2 pb-4 animate-fadeUp">
             <p className="text-xs text-gray-300 font-semibold">
-              Singhmar MIS · Agricultural Subsidy Management
+              Agarwal MIS · Agricultural Subsidy Management
             </p>
             <div className="flex items-center gap-1.5 text-xs text-gray-300">
               <HiCheck className="w-3 h-3 text-emerald-400" />

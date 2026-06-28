@@ -11,7 +11,7 @@ function Footer() {
 					</div>
 					<p className="text-[11px] sm:text-xs text-stone-800">
 						© {CURRENT_YEAR}{" "}
-						<span className="font-medium text-stone-800">Singhmar Pvt. Ltd.</span>
+						<span className="font-medium text-stone-800">Agarwal Pvt. Ltd.</span>
 						{" "}All rights reserved.
 					</p>
 				</div>

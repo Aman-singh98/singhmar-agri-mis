@@ -50,7 +50,7 @@
 // 						</div>
 // 						<div className="leading-tight min-w-0">
 // 							<h1 className="text-sm sm:text-base md:text-lg font-bold text-stone-900 dark:text-white tracking-tight truncate">
-// 								<span className="font-semibold text-green-900 dark:text-green-400">Singhmar</span>
+// 								<span className="font-semibold text-green-900 dark:text-green-400">Agarwal</span>
 // 							</h1>
 // 							<p className="text-[10px] uppercase tracking-widest text-green-700 dark:text-green-500 font-medium">
 // 								Agricultural Management Information System — Management Information System

@@ -40,7 +40,7 @@ function SidebarHeader({ collapsed, onClose }) {
 				</div>
 				{!collapsed && (
 					<div>
-						<p style={{ color: "#86efac", fontSize: 16, fontWeight: 700, letterSpacing: "0.1em", fontFamily: "'DM Sans'" }}>Singhmar</p>
+						<p style={{ color: "#86efac", fontSize: 16, fontWeight: 700, letterSpacing: "0.1em", fontFamily: "'DM Sans'" }}>AGARWAL</p>
 						<p className="text-[10px] uppercase tracking-widest text-green-500 font-light">
 							Agricultural Management Information System
 						</p>
